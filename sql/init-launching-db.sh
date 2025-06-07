@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# ------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------
 # init-launching-db.sh
 # Inicializa o banco de dados do microserviço LaunchingService no container PostgreSQL
 #
 # Autor: Flavio dos Santos
 # Ambiente: WSL2 + Ubuntu 22.04 LTS + Docker + Docker Compose V2
-#
+#----------------------------------------------------------------------------------------------
 # 💡 Observação:
 # Os scripts .sql devem estar localizados na pasta:
 #   C:\workarea\projects\Challenge.SolutionArchitecture\sql
