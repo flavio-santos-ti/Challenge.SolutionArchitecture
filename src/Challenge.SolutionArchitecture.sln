@@ -9,11 +9,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.SolutionArchitect
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.SolutionArchitecture.ConsolidationService", "Challenge.SolutionArchitecture.ConsolidationService\Challenge.SolutionArchitecture.ConsolidationService.csproj", "{A474F816-C65C-4053-93A9-B6801B88E06B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Serviço de Lançamento", "1 - Serviço de Lançamento", "{07BE30F7-B838-4D1A-9E3E-FE03E5C57E51}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Serviço de Lançamento", "2 - Serviço de Lançamento", "{07BE30F7-B838-4D1A-9E3E-FE03E5C57E51}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Serviço de Consolidação", "2 - Serviço de Consolidação", "{653E03C4-5C6F-41FE-B1D7-779BFC8D4E2F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Serviço de Consolidação", "3 - Serviço de Consolidação", "{653E03C4-5C6F-41FE-B1D7-779BFC8D4E2F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.SolutionArchitecture.ConsolidationService.Tests", "..\tests\Challenge.SolutionArchitecture.ConsolidationService.Tests\Challenge.SolutionArchitecture.ConsolidationService.Tests.csproj", "{31E956F1-BD3E-4095-8905-976C06BAEBC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.SolutionArchitecture.ApiGateway", "Challenge.SolutionArchitecture.ApiGateway\Challenge.SolutionArchitecture.ApiGateway.csproj", "{52385CB5-8784-49B1-9EDF-D5768E630102}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - API Gateway", "1 - API Gateway", "{F7141E8A-3DD2-4DC3-B632-E279E28DF9CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +41,10 @@ Global
 		{31E956F1-BD3E-4095-8905-976C06BAEBC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31E956F1-BD3E-4095-8905-976C06BAEBC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31E956F1-BD3E-4095-8905-976C06BAEBC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52385CB5-8784-49B1-9EDF-D5768E630102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52385CB5-8784-49B1-9EDF-D5768E630102}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52385CB5-8784-49B1-9EDF-D5768E630102}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52385CB5-8784-49B1-9EDF-D5768E630102}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,5 +54,6 @@ Global
 		{CF667D98-946F-4E7A-9EC5-1BB39D453D63} = {07BE30F7-B838-4D1A-9E3E-FE03E5C57E51}
 		{A474F816-C65C-4053-93A9-B6801B88E06B} = {653E03C4-5C6F-41FE-B1D7-779BFC8D4E2F}
 		{31E956F1-BD3E-4095-8905-976C06BAEBC1} = {653E03C4-5C6F-41FE-B1D7-779BFC8D4E2F}
+		{52385CB5-8784-49B1-9EDF-D5768E630102} = {F7141E8A-3DD2-4DC3-B632-E279E28DF9CD}
 	EndGlobalSection
 EndGlobal
