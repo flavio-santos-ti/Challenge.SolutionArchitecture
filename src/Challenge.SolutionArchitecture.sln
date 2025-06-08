@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.SolutionArchitect
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.SolutionArchitecture.LaunchingService.Tests", "..\tests\Challenge.SolutionArchitecture.LaunchingService.Tests\Challenge.SolutionArchitecture.LaunchingService.Tests.csproj", "{CF667D98-946F-4E7A-9EC5-1BB39D453D63}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.SolutionArchitecture.ConsolidationService", "Challenge.SolutionArchitecture.ConsolidationService\Challenge.SolutionArchitecture.ConsolidationService.csproj", "{A474F816-C65C-4053-93A9-B6801B88E06B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Serviço de Lançamento", "1 - Serviço de Lançamento", "{07BE30F7-B838-4D1A-9E3E-FE03E5C57E51}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Serviço de Consolidação", "2 - Serviço de Consolidação", "{653E03C4-5C6F-41FE-B1D7-779BFC8D4E2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +27,17 @@ Global
 		{CF667D98-946F-4E7A-9EC5-1BB39D453D63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF667D98-946F-4E7A-9EC5-1BB39D453D63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF667D98-946F-4E7A-9EC5-1BB39D453D63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A474F816-C65C-4053-93A9-B6801B88E06B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A474F816-C65C-4053-93A9-B6801B88E06B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A474F816-C65C-4053-93A9-B6801B88E06B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A474F816-C65C-4053-93A9-B6801B88E06B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CECB8058-7D6F-4FAC-A592-43E06A590693} = {07BE30F7-B838-4D1A-9E3E-FE03E5C57E51}
+		{CF667D98-946F-4E7A-9EC5-1BB39D453D63} = {07BE30F7-B838-4D1A-9E3E-FE03E5C57E51}
+		{A474F816-C65C-4053-93A9-B6801B88E06B} = {653E03C4-5C6F-41FE-B1D7-779BFC8D4E2F}
 	EndGlobalSection
 EndGlobal
