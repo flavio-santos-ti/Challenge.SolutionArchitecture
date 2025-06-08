@@ -3,7 +3,7 @@ using Challenge.SolutionArchitecture.LaunchingService.Repositories;
 using Challenge.SolutionArchitecture.LaunchingService.Services;
 using Moq;
 
-namespace Challenge.SolutionArchitecture.LaunchingService.Tests;
+namespace Challenge.SolutionArchitecture.LaunchingService.Tests.Services;
 
 public class TransactionServiceTests
 {
