@@ -12,9 +12,68 @@
 bin/
 obj/
 out/
+[Bb]uild/
+_ReSharper*/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.cache
+*.dbmdl
+*.pdb
+*.mdb
+*.opendb
+*.pidb
 
 # Arquivos de log
 *.log
+
+#################################
+# Docker
+#################################
+
+# Docker artifacts
+**/docker-volume/
+**/docker-data/
+**/.docker/
+
+# Named volumes (if generated)
+pgdata/
+volumes/
+
+#################################
+# SQL / Database
+#################################
+
+# Backup, temp and lock files
+*.sql~
+*.sqlite
+*.db
+*.bak
+*.sql.log
+*.log.sql
+
+# PostgreSQL specific
+*.pgsql
+*.pgsql_tmp
+
+#################################
+# Test artifacts
+#################################
+
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+*.testlog
+
+#################################
+# VS Code / IDEs
+#################################
+
+.vscode/
+.idea/
+*.code-workspace
 
 # Arquivos de pacotes gerados
 *.nupkg
@@ -110,3 +169,14 @@ _ReSharper.Caches/
 *.dll
 
 **/appsettings.Development.json
+
+#################################
+# Custom (seus arquivos locais)
+#################################
+
+# Arquivos sensíveis ou de dev local
+appsettings.Development.json
+.env
+*.secret
+*.local
+*.env.*
