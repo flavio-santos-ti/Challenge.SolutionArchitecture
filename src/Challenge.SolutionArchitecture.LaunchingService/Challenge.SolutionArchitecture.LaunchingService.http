@@ -1,0 +1,6 @@
+@Challenge.SolutionArchitecture.LaunchingService_HostAddress = http://localhost:5211
+
+GET {{Challenge.SolutionArchitecture.LaunchingService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
