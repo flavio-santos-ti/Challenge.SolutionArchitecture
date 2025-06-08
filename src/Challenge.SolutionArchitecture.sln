@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Serviço de Lançamento
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Serviço de Consolidação", "2 - Serviço de Consolidação", "{653E03C4-5C6F-41FE-B1D7-779BFC8D4E2F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Challenge.SolutionArchitecture.ConsolidationService.Tests", "..\tests\Challenge.SolutionArchitecture.ConsolidationService.Tests\Challenge.SolutionArchitecture.ConsolidationService.Tests.csproj", "{31E956F1-BD3E-4095-8905-976C06BAEBC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{A474F816-C65C-4053-93A9-B6801B88E06B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A474F816-C65C-4053-93A9-B6801B88E06B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A474F816-C65C-4053-93A9-B6801B88E06B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31E956F1-BD3E-4095-8905-976C06BAEBC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31E956F1-BD3E-4095-8905-976C06BAEBC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31E956F1-BD3E-4095-8905-976C06BAEBC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31E956F1-BD3E-4095-8905-976C06BAEBC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,5 +45,6 @@ Global
 		{CECB8058-7D6F-4FAC-A592-43E06A590693} = {07BE30F7-B838-4D1A-9E3E-FE03E5C57E51}
 		{CF667D98-946F-4E7A-9EC5-1BB39D453D63} = {07BE30F7-B838-4D1A-9E3E-FE03E5C57E51}
 		{A474F816-C65C-4053-93A9-B6801B88E06B} = {653E03C4-5C6F-41FE-B1D7-779BFC8D4E2F}
+		{31E956F1-BD3E-4095-8905-976C06BAEBC1} = {653E03C4-5C6F-41FE-B1D7-779BFC8D4E2F}
 	EndGlobalSection
 EndGlobal
