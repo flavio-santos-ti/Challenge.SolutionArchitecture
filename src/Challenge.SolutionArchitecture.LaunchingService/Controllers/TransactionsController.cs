@@ -1,5 +1,7 @@
 ﻿using Challenge.SolutionArchitecture.LaunchingService.Models;
+using Challenge.SolutionArchitecture.LaunchingService.Models.Dto;
 using Challenge.SolutionArchitecture.LaunchingService.Services;
+using FDS.NetCore.ApiResponse.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Challenge.SolutionArchitecture.LaunchingService.Controllers;
@@ -16,16 +18,17 @@ public class TransactionsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post(Transaction transaction)
+    public async Task<IActionResult> AddAsync(CreateTransactionDto input)
     {
-        var result = await _service.RegisterAsync(transaction);
-        return CreatedAtAction(nameof(result), new { id = result.Id }, result);
+        var response = await _service.AddAsync(input);
+        return StatusCode(response.StatusCode, response);
     }
 
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(Guid id)
+    [HttpGet]
+    public async Task<IActionResult> GetByDate([FromQuery] DateOnly date)
     {
-        var transaction = await _service.GetByIdAsync(id);
-        return transaction is null ? NotFound() : Ok(transaction);
+        var transactions = await _service.GetByDateAsync(date);
+        return StatusCode(transactions.StatusCode, transactions);
     }
+
 }
