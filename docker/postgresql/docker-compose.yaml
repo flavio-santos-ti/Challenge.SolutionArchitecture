@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: sql-postgresql
+    container_name: postgresql
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: mouse123
