@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: postgresql
+    container_name: sql-postgresql
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: mouse123
@@ -12,7 +12,13 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: always
+    networks:
+      - challenge-net
 
 volumes:
   postgres_data:
     driver: local
+
+networks:
+  challenge-net:
+    external: true
