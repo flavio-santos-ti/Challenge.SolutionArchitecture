@@ -1,0 +1,18 @@
+services:
+  api-consolidation:
+    image: img-cons
+    container_name: api-consolidation
+    build:
+      context: ../..
+      dockerfile: docker/api-consolidation/Dockerfile
+    ports:
+      - "5096:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - DOTNET_ENVIRONMENT=Production
+    networks:
+      - challenge-net
+
+networks:
+  challenge-net:
+    external: true
