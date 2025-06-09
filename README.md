@@ -6,7 +6,9 @@
 [![NuGet ApiResponse](https://img.shields.io/nuget/v/Flavio.Santos.NetCore.ApiResponse?label=NuGet%20ApiResponse&logo=nuget)](https://www.nuget.org/packages/Flavio.Santos.NetCore.ApiResponse/)
 
 ## 📌 Sobre
-Desafio técnico de arquitura de soluções proposto com foco em microserviços, mensageria, persistência e automação de infraestrutura.
+
+Desafio técnico de arquitetura
+
 ---
 
 ## 🛠️ Requisitos de Ambiente
