@@ -19,10 +19,9 @@ public class DailyBalanceRepository : IDailyBalanceRepository
         await _context.SaveChangesAsync();
     }
 
-    public async Task<DailyBalance?> GetByReferenceDateAsync(DateTime referenceDate)
+    public async Task<DailyBalance?> GetByReferenceDateAsync(DateTime date)
     {
         return await _context.DailyBalances
-            .AsNoTracking()
-            .FirstOrDefaultAsync(x => x.ReferenceDate.Date == referenceDate.Date);
+            .FirstOrDefaultAsync(b => b.ReferenceDate == DateOnly.FromDateTime(date));
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Challenge.SolutionArchitecture.ConsolidationService.Models;
+using Challenge.SolutionArchitecture.ConsolidationService.Models.Dto;
 using Challenge.SolutionArchitecture.ConsolidationService.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,17 +17,25 @@ public class DailyBalancesController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Register([FromBody] DailyBalance balance)
+    public async Task<IActionResult> AddAsync([FromBody] CreateDailyBalanceDto input)
     {
-        var result = await _service.RegisterAsync(balance);
-        return CreatedAtAction(nameof(GetByReferenceDate), new { date = result.ReferenceDate.ToString("yyyy-MM-dd") }, result);
+        var result = await _service.AddAsync(input.ReferenceDate);
+
+        if (result is null)
+            return BadRequest("Erro ao consolidar o saldo diário.");
+
+        return CreatedAtAction(
+            nameof(GetByReferenceDate),
+            new { date = result.ReferenceDate.ToString("yyyy-MM-dd") },
+            result
+        );
     }
 
     [HttpGet("{date}")]
     public async Task<IActionResult> GetByReferenceDate(string date)
     {
         if (!DateTime.TryParse(date, out var parsedDate))
-            return BadRequest("Data inválida");
+            return BadRequest("Data inválida.");
 
         var result = await _service.GetByReferenceDateAsync(parsedDate);
         return result is null ? NotFound() : Ok(result);

@@ -15,6 +15,14 @@ public class ConsolidationDbContext : DbContext
         modelBuilder.Entity<DailyBalance>().ToTable("daily_balances");
 
         modelBuilder.Entity<DailyBalance>()
+            .HasKey(b => b.Id); 
+
+        modelBuilder.Entity<DailyBalance>()
+            .Property(b => b.Id)
+            .HasColumnName("id")
+            .HasColumnType("uuid");
+
+        modelBuilder.Entity<DailyBalance>()
             .Property(b => b.ReferenceDate)
             .HasColumnName("reference_date")
             .HasColumnType("date");

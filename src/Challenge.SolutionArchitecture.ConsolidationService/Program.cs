@@ -1,4 +1,6 @@
+using Challenge.SolutionArchitecture.ConsolidationService.Configuration;
 using Challenge.SolutionArchitecture.ConsolidationService.Data;
+using Challenge.SolutionArchitecture.ConsolidationService.Http.Clients;
 using Challenge.SolutionArchitecture.ConsolidationService.Repositories;
 using Challenge.SolutionArchitecture.ConsolidationService.Services;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +16,13 @@ builder.Services.AddDbContext<ConsolidationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IDailyBalanceRepository, DailyBalanceRepository>();
 builder.Services.AddScoped<IDailyBalanceService, DailyBalanceService>();
+
+// Configurações externas (serviços integrados)
+builder.Services.Configure<LaunchingServiceOptions>(
+    builder.Configuration.GetSection("Services:LaunchingService"));
+
+// Registro do HTTP Client para consumo do LaunchingService
+builder.Services.AddHttpClient<ILaunchingServiceClient, LaunchingServiceClient>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
