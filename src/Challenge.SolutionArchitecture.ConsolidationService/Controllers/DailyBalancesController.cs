@@ -1,6 +1,7 @@
 ﻿using Challenge.SolutionArchitecture.ConsolidationService.Models;
 using Challenge.SolutionArchitecture.ConsolidationService.Models.Dto;
 using Challenge.SolutionArchitecture.ConsolidationService.Services;
+using FDS.NetCore.ApiResponse.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Challenge.SolutionArchitecture.ConsolidationService.Controllers;
@@ -19,16 +20,8 @@ public class DailyBalancesController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> AddAsync([FromBody] CreateDailyBalanceDto input)
     {
-        var result = await _service.AddAsync(input.ReferenceDate);
-
-        if (result is null)
-            return BadRequest("Erro ao consolidar o saldo diário.");
-
-        return CreatedAtAction(
-            nameof(GetByReferenceDate),
-            new { date = result.ReferenceDate.ToString("yyyy-MM-dd") },
-            result
-        );
+        var response = await _service.AddAsync(input.ReferenceDate);
+        return StatusCode(response.StatusCode, response);
     }
 
     [HttpGet("{date}")]
@@ -36,8 +29,8 @@ public class DailyBalancesController : ControllerBase
     {
         if (!DateTime.TryParse(date, out var parsedDate))
             return BadRequest("Data inválida.");
-
-        var result = await _service.GetByReferenceDateAsync(parsedDate);
-        return result is null ? NotFound() : Ok(result);
+        var referenceDate = DateOnly.FromDateTime(parsedDate);
+        var response = await _service.GetByReferenceDateAsync(referenceDate);
+        return StatusCode(response.StatusCode, response);
     }
 }

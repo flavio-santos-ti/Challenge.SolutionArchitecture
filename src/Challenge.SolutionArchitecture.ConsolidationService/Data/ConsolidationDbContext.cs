@@ -45,6 +45,7 @@ public class ConsolidationDbContext : DbContext
         modelBuilder.Entity<DailyBalance>()
             .Property(b => b.GeneratedAt)
             .HasColumnName("generated_at")
-            .HasColumnType("timestamp with time zone");
+            .HasColumnType("timestamp");
     }
 }
+
