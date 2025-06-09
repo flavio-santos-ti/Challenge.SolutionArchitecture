@@ -5,5 +5,5 @@ namespace Challenge.SolutionArchitecture.ConsolidationService.Repositories;
 public interface IDailyBalanceRepository
 {
     Task AddAsync(DailyBalance balance);
-    Task<DailyBalance?> GetByReferenceDateAsync(DateTime referenceDate);
+    Task<DailyBalance?> GetByReferenceDateAsync(DateOnly referenceDate);
 }
