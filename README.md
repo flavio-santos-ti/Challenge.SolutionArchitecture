@@ -138,7 +138,8 @@ Exemplos de chamadas:
 ```http
 POST http://172.19.121.141:5000/api/Transactions
 Content-Type: application/json
-
+```
+```json
 {
   "occurredAt": "2025-06-08",
   "amount": 112.56,
@@ -158,7 +159,9 @@ GET http://172.19.121.141:5000/api/Transactions/?date=2025-06-08
 ```http
 POST http://localhost:5000/api/DailyBalances
 Content-Type: application/json
+```
 
+```json
 {
   "referenceDate": "2025-06-09"
 }
