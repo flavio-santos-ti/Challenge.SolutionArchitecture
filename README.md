@@ -22,7 +22,7 @@ Para executar esta solução corretamente, é necessário:
 
 ---
 
-## 📦 O Que Está Neste Repositório
+## 📦 O Que Está Neste Repositório?
 
 Este repositório contém:
 
@@ -34,3 +34,21 @@ Este repositório contém:
 - Dockerfile e docker-compose separados por microserviço
 - Banco de dados PostgreSQL com criação automatizada via SQL script
 - Documentação em PDF com **diagramas C4**, **requisitos**, **decisões arquiteturais** e **considerações de escalabilidade**
+
+---
+
+## 📄 Documentação Técnica
+
+A documentação completa está no arquivo PDF abaixo:
+
+📘 [`Challenge-SolutionArchitecture.pdf`](./pdf/Challenge-SolutionArchitecture.pdf)
+
+Ela abrange:
+
+- Descrição do problema e solução
+- Decisões arquiteturais estratégicas
+- Diagrama de containers e interações
+- Visão de implantação
+- Considerações sobre escalabilidade, cache e observabilidade
+
+---
