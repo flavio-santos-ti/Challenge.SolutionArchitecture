@@ -17,9 +17,11 @@ Desafio técnico de arquitetura de software proposto com foco em microserviços,
 Para executar esta solução corretamente, é necessário:
 
 -  **WSL2 com Ubuntu 22.04 LTS**
--  **Docker e Docker Compose instalados no WSL**
+-  Docker instalado e configurado **dentro do WSL2**
 -  **.NET 8** SDK (já incluso nas imagens base)
 -  **PostgreSQL** client (opcional, para acesso local ao banco via terminal)
+
+> ❌ **Docker Desktop não é necessário**. Basta o Docker rodando no ambiente WSL2.
 
 ---
 
@@ -173,3 +175,145 @@ Content-Type: application/json
 GET http://localhost:5000/api/DailyBalances/2025-06-08
 ```
 
+---
+
+## 💡 Executando via Visual Studio 2022 + Terminal WSL2
+
+Como alternativa, você pode:
+
+1. Abrir a solução `Challenge.SolutionArchitecture.sln` no Visual Studio 2022
+2. Executar o backend pela IDE
+3. **No terminal WSL2**, executar:
+
+```bash
+cd /mnt/c/workarea/projects/Challenge.SolutionArchitecture/docker/postgresql
+chmod +x up-docker-postgres.sh
+./up-docker-postgres.sh
+```
+
+4. Também no terminal, execute:
+```bash
+cd /mnt/c/workarea/projects/Challenge.SolutionArchitecture/sql
+chmod +x init-launching-db.sh init-consolidation-db.sh
+./init-launching-db.sh
+./init-consolidation-db.sh
+```
+
+5. Configure os arquivos `appsettings.Development.json` conforme abaixo.
+
+---
+
+## 📄 Exemplos de appsettings.Development.json
+
+> 📌 Esses arquivos devem ser criados manualmente nos diretórios de cada microserviço.
+
+### 🔹 API Gateway
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "ReverseProxy": {
+    "Routes": {
+      "launching": {
+        "ClusterId": "launching_cluster",
+        "Match": {
+          "Path": "/api/transactions/{**catch-all}"
+        }
+      },
+      "consolidation": {
+        "ClusterId": "consolidation_cluster",
+        "Match": {
+          "Path": "/api/dailybalances/{**catch-all}"
+        }
+      }
+    },
+    "Clusters": {
+      "launching_cluster": {
+        "Destinations": {
+          "launching_service": {
+            "Address": "http://localhost:5211/"
+          }
+        }
+      },
+      "consolidation_cluster": {
+        "Destinations": {
+          "consolidation_service": {
+            "Address": "http://localhost:5096/"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+### 🔹 Launching Service
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+    "DefaultConnection": "Host=[IP_DO_SEU_WSL2];Port=5432;Database=launching_service_db;Username=postgres;Password=mouse123"
+  },
+  "AllowedHosts": "*"
+}
+```
+
+### 🔹 Consolidation Service
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+    "DefaultConnection": "Host=[IP_DO_SEU_WSL2];Port=5432;Database=consolidation_service_db;Username=postgres;Password=mouse123"
+  },
+  "Services": {
+    "LaunchingService": {
+      "BaseUrl": "http://localhost:5211",
+      "GetTransactionsByDatePath": "/api/transactions/?date="
+    }
+  }
+}
+```
+
+---
+
+## 📎 Documentação Técnica
+
+> O documento completo da arquitetura encontra-se na pasta `pdf/Challenge-SolutionArchitecture.pdf`.
+
+---
+
+## 📁 Estrutura do Repositório
+
+```
+├── docker
+│   ├── api-gateway
+│   ├── api-launching
+│   ├── api-consolidation
+│   └── postgresql
+├── sql
+├── src
+├── tests
+└── pdf
+```
+
+---
+
+## ✍️ Autor
+
+Desenvolvido por [Flávio Santos](https://github.com/flavio-santos-ti)
+
+📌 Repositório público: https://github.com/flavio-santos-ti/Challenge.SolutionArchitecture
