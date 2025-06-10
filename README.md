@@ -287,9 +287,6 @@ chmod +x init-launching-db.sh init-consolidation-db.sh
   }
 }
 ```
-
----
-
 ## 📎 Documentação Técnica
 
 > O documento completo da arquitetura encontra-se na pasta `pdf/Challenge-SolutionArchitecture.pdf`.
@@ -312,8 +309,7 @@ chmod +x init-launching-db.sh init-consolidation-db.sh
 
 ---
 
-## ✍️ Autor
+### 🔹 Origem e Contexto do Desafio
+Este documento e a solução arquitetural proposta foram elaborados em resposta ao desafio técnico descrito no arquivo **"DESAFIO ARQ DE SOLUCOES.pdf"**, que estabeleceu os requisitos funcionais e não funcionais para o desenvolvimento do sistema. 
 
-Desenvolvido por [Flávio Santos](https://github.com/flavio-santos-ti)
-
-📌 Repositório público: https://github.com/flavio-santos-ti/Challenge.SolutionArchitecture
+O documento original do desafio está disponível no diretório [`/pdf`](https://github.com/flavio-santos-ti/Challenge.SolutionArchitecture/tree/main/pdf) do repositório do projeto, garantindo total rastreabilidade entre os requisitos solicitados e as decisões arquiteturais aqui documentadas.
