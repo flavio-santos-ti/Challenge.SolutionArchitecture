@@ -15,16 +15,22 @@ Desafio técnico de arquitetura de software proposto com foco em microserviços,
 
 Para executar esta solução corretamente, é necessário:
 
-
-Para executar esta solução corretamente, é necessário:
-
 -  **WSL2 com Ubuntu 22.04 LTS**
 -  **Docker e Docker Compose instalados no WSL**
--  .NET 8 SDK (já incluso nas imagens base)
--  PostgreSQL client (opcional, para acesso local ao banco via terminal)
-
-## Conteúdo
-
-A documentação completa está no arquivo PDF abaixo
+-  **.NET 8** SDK (já incluso nas imagens base)
+-  **PostgreSQL** client (opcional, para acesso local ao banco via terminal)
 
 ---
+
+## 📦 O Que Está Neste Repositório
+
+Este repositório contém:
+
+- Código-fonte completo de **três microserviços**:
+  - `LaunchingService` – responsável pelos lançamentos financeiros
+  - `ConsolidationService` – responsável por consolidar os saldos diários
+  - `ApiGateway` – roteamento centralizado via **YARP**
+- Scripts `.sh` para subir e derrubar toda a stack localmente
+- Dockerfile e docker-compose separados por microserviço
+- Banco de dados PostgreSQL com criação automatizada via SQL script
+- Documentação em PDF com **diagramas C4**, **requisitos**, **decisões arquiteturais** e **considerações de escalabilidade**
