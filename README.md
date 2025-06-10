@@ -7,17 +7,24 @@
 
 ## 📌 Sobre
 
-Desafio técnico de arquitetura
+Desafio técnico de arquitetura de software proposto com foco em microserviços, mensageria, persistência e automação de infraestrutura.
 
 ---
 
 ## 🛠️ Requisitos de Ambiente
 
 Para executar esta solução corretamente, é necessário:
-- WSL2 com Ubuntu 22.04 LTS
 
-- Docker e Docker Compose instalados no WSL
 
-- .NET 8 SDK (já incluso nas imagens base)
+Para executar esta solução corretamente, é necessário:
 
-- PostgreSQL client (opcional, para acesso local ao banco via terminal)
+-  **WSL2 com Ubuntu 22.04 LTS**
+-  **Docker e Docker Compose instalados no WSL**
+-  .NET 8 SDK (já incluso nas imagens base)
+-  PostgreSQL client (opcional, para acesso local ao banco via terminal)
+
+## Conteúdo
+
+A documentação completa está no arquivo PDF abaixo
+
+---
