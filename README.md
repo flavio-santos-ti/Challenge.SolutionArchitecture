@@ -99,7 +99,7 @@ chmod +x up-all.sh
 chmod +x down-all.sh
 ```
 
-## ⬆️ 4. Subindo os Containers (PostgreSQL + APIs)
+### ⬆️ 4. Subindo os Containers (PostgreSQL + APIs)
 
 Execute:
 
@@ -114,7 +114,7 @@ Esse script irá:
 - Inicializar os bancos e tabelas (init-*.sh)
 - Subir os microserviços (api-gateway, api-launching, api-consolidation)
 
-## ⬇️ 5. Parando e Removendo Tudo
+### ⬇️ 5. Parando e Removendo Tudo
 
 ```bash
 ./down-all.sh
